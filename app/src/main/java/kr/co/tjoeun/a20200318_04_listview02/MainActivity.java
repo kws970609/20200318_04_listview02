@@ -3,6 +3,7 @@ package kr.co.tjoeun.a20200318_04_listview02;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.jar.Attributes;
 
 import kr.co.tjoeun.a20200318_04_listview02.adapters.RoomAdater;
 import kr.co.tjoeun.a20200318_04_listview02.databinding.ActivityMainBinding;
@@ -37,13 +39,14 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Log.i("리스트뷰 아이템 클릭", String.format("%d번 줄 클릭", position));
 
-//                클릭된 방의 주소를 Toast로 출력
 
                 Room clickedRoom = roomDatas.get(position);
 
-                Toast.makeText(mContext, clickedRoom.getAddress(),Toast.LENGTH_SHORT).show();
+//                방 상세화면으로 이동
+                Intent intent = new Intent(mContext, RoomDetailActivity.class);
+                Intent.putExtra("room", clickedRoom)
+
 
             }
         });
@@ -51,12 +54,12 @@ public class MainActivity extends BaseActivity {
         binding.roomListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
+//              클릭된 방 정보를 목록에서 빼옴 position번째
                 Room data = roomDatas.get(position);
 
-                Toast.makeText(mContext, data.getDescription(),Toast.LENGTH_SHORT).show();
-                return true;
-            }
+
+
+
         });
 
 
