@@ -40,11 +40,11 @@ public class MainActivity extends BaseActivity {
     }
 
     private void addRooms() {
-        roomDatas.add(new Room(8000,"서울시 은평구", 4,"살기좋은 방입니다."));
-        roomDatas.add(new Room(8000,"서울시 노원구", 20,"노원구 아파트."));
-        roomDatas.add(new Room(8000,"서울시 종로구", 12,"종로구의 펜트하우스."));
-        roomDatas.add(new Room(8000,"경기도 고양시", 0,"고양시 반지하."));
-        roomDatas.add(new Room(8000,"경기도 부천시", -1,"부천시 주택."));
+        roomDatas.add(new Room(88000,"서울시 은평구", 4,"살기좋은 방입니다."));
+        roomDatas.add(new Room(28000,"서울시 노원구", 20,"노원구 아파트."));
+        roomDatas.add(new Room(38000,"서울시 종로구", 12,"종로구의 펜트하우스."));
+        roomDatas.add(new Room(48000,"경기도 고양시", 0,"고양시 반지하."));
+        roomDatas.add(new Room(68000,"경기도 부천시", -1,"부천시 주택."));
 
         roomAdater.notifyDataSetChanged();
 
