@@ -77,6 +77,9 @@ public class RoomAdater extends ArrayAdapter<Room> {
 
         addressAndFloorTxt.setText(String.format("%s,%s층",data.getAddress(),floorStr));
 
+//        설명은 들어온 그대로 출력.
+        descTxt.setText(data.getDescription());
+
 
 
 
